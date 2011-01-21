@@ -1,0 +1,32 @@
+#wrapper {
+	margin: 5px auto;
+	width: 800px;
+	border:solid green;
+}
+h1 {
+	margin:5px;
+}
+h2 {
+	font-size:18px;
+	margin:5px 5px 20px 5px;
+}
+form {
+	width:550px;
+	margin:0 auto;
+	border:solid red;
+}
+label {
+	background:orange;
+	width:150px;
+	display:inline-block;
+}
+.inputContainer {
+	margin:10px 5px;
+}
+#buttonContainer {
+	border:solid blue;
+	
+}
+.errorField {
+	color:red;
+}

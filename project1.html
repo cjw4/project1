@@ -14,28 +14,35 @@
 
 <form>
 	
-<div id="inputContainer">
-	<label>Name:</label>
+<div id="inputNameContainer" class="inputContainer">
+	<label>Name</label>
 	<input type="text" id="Name" />
 </div>
 	
-<div id="inputContainer">
-	<label>Email:</label>
+<div id="inputEmailContainer" class="inputContainer">
+	<label>Email</label>
 	<input type="text" id="Email" />
 </div>
+
+<div id="inputPhoneContainer" class="inputContainer">
+	<label>Phone</label>
+	<input type="text" id="Phone1" size="3" />
+	<input type="text" id="Phone2" size="3" />
+	<input type="text" id="Phone3" size="4" />
+</div>
 	
-<div id="inputContainer">
-	<label>Address:</label>
+<div id="inputAddressContainer" class="inputContainer">
+	<label>Address</label>
 	<input type="text" id="Address" />
 </div>
 
-<div id="inputContainer">
-	<label>City:</label>
+<div id="inputCityContainer" class="inputContainer">
+	<label>City</label>
 	<input type="text" id="City" />
 </div>
 	
-<div id="inputContainer">
-	<label>State:</label>
+<div id="inputStateContainer" class="inputContainer">
+	<label>State</label>
 	<select id="State">
 		<option value="California">California</option>
 		<option value="NewYork">New York</option>
@@ -45,18 +52,18 @@
 	</select>
 </div>
 	
-<div id="inputContainer">
-	<label>Zip:</label>
+<div id="inputZipContainer" class="inputContainer">
+	<label>Zip</label>
 	<input type="text" id="Zip">
 </div>
 
-<div id="inputContainer">
+<div id="inputGenderContainer" class="inputContainer">
 	<label>Gender</label>
 	<input type="radio" name="gender" id="male" />Male
 	<input type="radio" name="gender" id="female" checked />Female
 </div>
 	
-<div id="inputContainer">
+<div id="inputCourseContainer" class="inputContainer">
 	<label>Previous Courses</label>
 	<input type="checkbox" id="php" />php/mySQL
 	<input type="checkbox" id="java" />Java
@@ -64,9 +71,13 @@
 </div>
 
 <div id="buttonContainer">
-	<input type="button" value="Submit" id="button" class="button" onclick="validate();"/>
+	<input type="button" value="Validate" id="button" class="button" onclick="validate();"/>
 </div>
 	
 </div><!--### wrapper div ###-->
 </body>
 </html>
+
+<script type="text/javascript">
+	init();
+</script>
