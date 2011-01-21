@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project 1</title>
+<LINK href="project1.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="project1.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+<h1>Project 1</h1>
+<h2>This is the first project for my AJAX class at MATC. The goal is to get familiar with dynamic HTML by implementing it in form validation.</h2>
+
+
+<form>
+	
+<div id="inputContainer">
+	<label>Name:</label>
+	<input type="text" id="Name" />
+</div>
+	
+<div id="inputContainer">
+	<label>Email:</label>
+	<input type="text" id="Email" />
+</div>
+	
+<div id="inputContainer">
+	<label>Address:</label>
+	<input type="text" id="Address" />
+</div>
+
+<div id="inputContainer">
+	<label>City:</label>
+	<input type="text" id="City" />
+</div>
+	
+<div id="inputContainer">
+	<label>State:</label>
+	<select id="State">
+		<option value="California">California</option>
+		<option value="NewYork">New York</option>
+		<option value="Minnesota">Minnnesota</option>
+		<option value="Wisconsin">Wisconsin</option>
+		<option value="Wyoming">Wyoming</option>
+	</select>
+</div>
+	
+<div id="inputContainer">
+	<label>Zip:</label>
+	<input type="text" id="Zip">
+</div>
+
+<div id="inputContainer">
+	<label>Gender</label>
+	<input type="radio" name="gender" id="male" />Male
+	<input type="radio" name="gender" id="female" checked />Female
+</div>
+	
+<div id="inputContainer">
+	<label>Previous Courses</label>
+	<input type="checkbox" id="php" />php/mySQL
+	<input type="checkbox" id="java" />Java
+	<input type="checkbox" id="rails" />Ruby on Rails
+</div>
+
+<div id="buttonContainer">
+	<input type="button" value="Submit" id="button" class="button" onclick="validate();"/>
+</div>
+	
+</div><!--### wrapper div ###-->
+</body>
+</html>
