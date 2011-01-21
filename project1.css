@@ -11,7 +11,7 @@ h2 {
 	margin:5px 5px 20px 5px;
 }
 form {
-	width:550px;
+	width:575px;
 	margin:0 auto;
 	border:solid red;
 }
@@ -29,4 +29,6 @@ label {
 }
 .errorField {
 	color:red;
+	border:solid thin;
+	float:right;
 }
