@@ -1,4 +1,4 @@
-function validate () {
+function validate () { 
 	
 	// Check whether the name input has a value.
 
@@ -161,6 +161,59 @@ function validate () {
 		if (removeError) {
 			removeError.parentNode.removeChild(removeError);
 		}		
+	}
+	
+	// Showing the valid input 
+	if ((!document.getElementById("nameErrorField")) && (!document.getElementById("emailErrorField")) && (!document.getElementById("phoneErrorField")) 
+	&& (!document.getElementById("addressErrorField")) && (!document.getElementById("cityErrorField")) && (!document.getElementById("stateErrorField"))
+	&& (!document.getElementById("zipErrorField")) && (!document.getElementById("genderErrorField")) && (!document.getElementById("courseErrorField"))) {
+		
+		if (!document.getElementById("output")) {
+		// Create: <div id="output">You have filled out the form validly. Here is what you said:</div>
+		var output = document.createElement("div");
+		output.setAttribute("id", "output");
+		output.appendChild(document.createTextNode("You have filled out the form validly. Here is what you said:"));
+		document.getElementById("form").appendChild(output);
+		
+		// Create: <div id="nameOutput">Name: Chris</div> and append it to the output div.
+		var nameValue = document.getElementById("Name").value;
+		var nameOutput = document.createElement("div");
+		nameOutput.setAttribute("id", "nameOutput");
+		nameOutput.appendChild(document.createTextNode("Name: " + nameValue));
+		document.getElementById("output").appendChild(nameOutput);
+		
+		//Email
+		var emailValue = document.getElementById("Email").value;
+		var emailOutput = document.createElement("div");
+		emailOutput.setAttribute("id", "emailOutput");
+		emailOutput.appendChild(document.createTextNode("Email: " + emailValue));
+		document.getElementById("output").appendChild(emailOutput);
+		
+		//Phone
+		var phoneValue1 = document.getElementById("Phone1").value;
+		var phoneValue2 = document.getElementById("Phone2").value;
+		var phoneValue3 = document.getElementById("Phone3").value;
+		var phoneOutput = document.createElement("div");
+		phoneOutput.setAttribute("id", "emailOutput");
+		phoneOutput.appendChild(document.createTextNode("Phone: (" + phoneValue1 + ") " + phoneValue2 + "-" + phoneValue3));
+		document.getElementById("output").appendChild(phoneOutput);
+		
+		//Address
+		var addressValue = document.getElementById("Address").value;
+		var addressOutput = document.createElement("div");
+		addressOutput.setAttribute("id", "emailOutput");
+		addressOutput.appendChild(document.createTextNode("Address: " + addressValue));
+		document.getElementById("output").appendChild(addressOutput);
+		
+		
+		}
+	
+	} else {
+		
+		var removeOutput = document.getElementById("output");
+		if (removeOutput) {
+			removeOutput.parentNode.removeChild(removeOutput);
+		}
 	}
 
 } 
