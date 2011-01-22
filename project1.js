@@ -11,7 +11,7 @@ function validate () {
 			var nameErrorField = document.createElement("span");
 			nameErrorField.setAttribute("id", "nameErrorField");
 			nameErrorField.className = "errorField";
-			nameErrorField.appendChild(document.createTextNode("Your name is a required field."));
+			nameErrorField.appendChild(document.createTextNode("You must provide a name."));
 			document.getElementById("inputNameContainer").appendChild(nameErrorField);	
 		}
 	
@@ -34,7 +34,7 @@ function validate () {
 			var emailErrorField = document.createElement("span");
 			emailErrorField.setAttribute("id", "emailErrorField");
 			emailErrorField.className = "errorField";
-			emailErrorField.appendChild(document.createTextNode("Your email is required."));
+			emailErrorField.appendChild(document.createTextNode("You must provide an email."));
 			document.getElementById("inputEmailContainer").appendChild(emailErrorField);
 		}
 	} else {
@@ -51,7 +51,7 @@ function validate () {
 			var phoneErrorField = document.createElement("span");
 			phoneErrorField.setAttribute("id", "phoneErrorField");
 			phoneErrorField.className = "errorField";
-			phoneErrorField.appendChild(document.createTextNode("Your phone number is required."));
+			phoneErrorField.appendChild(document.createTextNode("You must provide a phone number."));
 			document.getElementById("inputPhoneContainer").appendChild(phoneErrorField);
 		}
 	} else {
@@ -68,7 +68,7 @@ function validate () {
 			var addressErrorField = document.createElement("span");
 			addressErrorField.setAttribute("id", "addressErrorField");
 			addressErrorField.className = "errorField";
-			addressErrorField.appendChild(document.createTextNode("Your address is required."));
+			addressErrorField.appendChild(document.createTextNode("You must provide an address."));
 			document.getElementById("inputAddressContainer").appendChild(addressErrorField);
 		}
 	} else {
@@ -85,7 +85,7 @@ function validate () {
 			var cityErrorField = document.createElement("span");
 			cityErrorField.setAttribute("id", "cityErrorField");
 			cityErrorField.className = "errorField";
-			cityErrorField.appendChild(document.createTextNode("Your city is required."));
+			cityErrorField.appendChild(document.createTextNode("Your must provide a city."));
 			document.getElementById("inputCityContainer").appendChild(cityErrorField);
 		}
 	} else {
@@ -102,7 +102,7 @@ function validate () {
 			var stateErrorField = document.createElement("span");
 			stateErrorField.setAttribute("id", "stateErrorField");
 			stateErrorField.className = "errorField";
-			stateErrorField.appendChild(document.createTextNode("Your state is required."));
+			stateErrorField.appendChild(document.createTextNode("You must select a state."));
 			document.getElementById("inputStateContainer").appendChild(stateErrorField);
 		}
 	} else {
@@ -119,7 +119,7 @@ function validate () {
 			var zipErrorField = document.createElement("span");
 			zipErrorField.setAttribute("id", "zipErrorField");
 			zipErrorField.className = "errorField";
-			zipErrorField.appendChild(document.createTextNode("Your zip code is required."));
+			zipErrorField.appendChild(document.createTextNode("You must provide a zip code."));
 			document.getElementById("inputZipContainer").appendChild(zipErrorField);
 		}
 	} else {
@@ -136,7 +136,7 @@ function validate () {
 			var genderErrorField = document.createElement("span");
 			genderErrorField.setAttribute("id", "genderErrorField");
 			genderErrorField.className = "errorField";
-			genderErrorField.appendChild(document.createTextNode("Your gender is required."));
+			genderErrorField.appendChild(document.createTextNode("You must select a gender."));
 			document.getElementById("inputGenderContainer").appendChild(genderErrorField);
 		}
 	} else {
@@ -153,7 +153,7 @@ function validate () {
 			var classErrorField = document.createElement("span");
 			classErrorField.setAttribute("id", "classErrorField");
 			classErrorField.className = "errorField";
-			classErrorField.appendChild(document.createTextNode("A course is required."));
+			classErrorField.appendChild(document.createTextNode("You must select a course."));
 			document.getElementById("inputCourseContainer").appendChild(classErrorField);
 		}
 	} else {
@@ -166,9 +166,10 @@ function validate () {
 	// Showing the valid input 
 	if ((!document.getElementById("nameErrorField")) && (!document.getElementById("emailErrorField")) && (!document.getElementById("phoneErrorField")) 
 	&& (!document.getElementById("addressErrorField")) && (!document.getElementById("cityErrorField")) && (!document.getElementById("stateErrorField"))
-	&& (!document.getElementById("zipErrorField")) && (!document.getElementById("genderErrorField")) && (!document.getElementById("courseErrorField"))) {
+	&& (!document.getElementById("zipErrorField")) && (!document.getElementById("genderErrorField")) && (!document.getElementById("classErrorField"))) {
 		
 		if (!document.getElementById("output")) {
+			
 		// Create: <div id="output">You have filled out the form validly. Here is what you said:</div>
 		var output = document.createElement("div");
 		output.setAttribute("id", "output");
@@ -205,9 +206,50 @@ function validate () {
 		addressOutput.appendChild(document.createTextNode("Address: " + addressValue));
 		document.getElementById("output").appendChild(addressOutput);
 		
+		//City
+		var cityValue = document.getElementById("City").value;
+		var cityOutput = document.createElement("div");
+		cityOutput.setAttribute("id", "cityOutput");
+		cityOutput.appendChild(document.createTextNode("City: " + cityValue));
+		document.getElementById("output").appendChild(cityOutput);
+		
+		//State
+		var stateValue = document.getElementById("State").value;
+		var stateOutput = document.createElement("div");
+		stateOutput.setAttribute("id", "stateOutput");
+		stateOutput.appendChild(document.createTextNode("State: " + stateValue));
+		document.getElementById("output").appendChild(stateOutput);
+	
+		//Zip code
+		var zipValue = document.getElementById("Zip").value;
+		var zipOutput = document.createElement("div");
+		zipOutput.setAttribute("id", "zipOutput");
+		zipOutput.appendChild(document.createTextNode("Zip Code: " + zipValue));
+		document.getElementById("output").appendChild(zipOutput);
+		
+		//Gender
+		if (document.getElementById("male").checked) {
+			var genderValue = "male";
+		} else {
+			var genderValue = "female";
+		}
+		var genderOutput = document.createElement("div");
+		genderOutput.appendChild(document.createTextNode("Gender: " + genderValue));
+		document.getElementById("output").appendChild(genderOutput);
+		
+		//Previous Courses
+		var phpValue = document.getElementById("php").checked;
+		var javaValue = document.getElementById("java").checked;
+		var railsValue = document.getElementById("rails").checked;
+		coursesOutput = document.createElement("div");
+		coursesOutput.setAttribute("id", "coursesOutput");
+		
+		
+		document.getElementById("output").appendChild(coursesOutput);
+		
+		} else {
 		
 		}
-	
 	} else {
 		
 		var removeOutput = document.getElementById("output");

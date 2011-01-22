@@ -5,6 +5,7 @@
 }
 h1 {
 	margin:5px;
+	font-size:18px;
 }
 h2 {
 	font-size:18px;
@@ -16,10 +17,24 @@ form {
 	border:solid red;
 }
 label {
+	font-size:18px;
+	font-weight:100;
 	background:orange;
 	width:150px;
 	display:inline-block;
 }
+input[type="text"] {
+	width:100px;
+	border: solid 1px #A5A5A5; 
+	padding: 3px 2px;
+	font-size:13px;
+}
+.button input{
+	padding:10px;
+	border: solid 1px;
+	background: #611788;
+}
+
 .inputContainer {
 	margin:10px 5px;
 }
@@ -31,4 +46,8 @@ label {
 	color:red;
 	border:solid thin;
 	float:right;
+	width:225px;
+}
+.blue {
+	color: blue;
 }
