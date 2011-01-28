@@ -1,3 +1,6 @@
+function init() {
+}
+
 function validate () { 
 	
 	// Check whether the name input has a value.
@@ -163,32 +166,31 @@ function validate () {
 		}		
 	}
 	
-	// Showing the valid input 
+	// If valid input is entered, show it. 
 	if ((!document.getElementById("nameErrorField")) && (!document.getElementById("emailErrorField")) && (!document.getElementById("phoneErrorField")) 
 	&& (!document.getElementById("addressErrorField")) && (!document.getElementById("cityErrorField")) && (!document.getElementById("stateErrorField"))
 	&& (!document.getElementById("zipErrorField")) && (!document.getElementById("genderErrorField")) && (!document.getElementById("classErrorField"))) {
 		
-		if (!document.getElementById("output")) {
-			
+		if (document.getElementById(output)) {
+			alert("Already here!");
+		}
 		// Create: <div id="output">You have filled out the form validly. Here is what you said:</div>
 		var output = document.createElement("div");
 		output.setAttribute("id", "output");
 		output.appendChild(document.createTextNode("You have filled out the form validly. Here is what you said:"));
-		document.getElementById("form").appendChild(output);
+
 		
 		// Create: <div id="nameOutput">Name: Chris</div> and append it to the output div.
 		var nameValue = document.getElementById("Name").value;
 		var nameOutput = document.createElement("div");
 		nameOutput.setAttribute("id", "nameOutput");
-		nameOutput.appendChild(document.createTextNode("Name: " + nameValue));
-		document.getElementById("output").appendChild(nameOutput);
+		nameOutput.appendChild(document.createTextNode("Name: " + nameValue));	
 		
 		//Email
 		var emailValue = document.getElementById("Email").value;
 		var emailOutput = document.createElement("div");
 		emailOutput.setAttribute("id", "emailOutput");
 		emailOutput.appendChild(document.createTextNode("Email: " + emailValue));
-		document.getElementById("output").appendChild(emailOutput);
 		
 		//Phone
 		var phoneValue1 = document.getElementById("Phone1").value;
@@ -197,35 +199,30 @@ function validate () {
 		var phoneOutput = document.createElement("div");
 		phoneOutput.setAttribute("id", "emailOutput");
 		phoneOutput.appendChild(document.createTextNode("Phone: (" + phoneValue1 + ") " + phoneValue2 + "-" + phoneValue3));
-		document.getElementById("output").appendChild(phoneOutput);
 		
 		//Address
 		var addressValue = document.getElementById("Address").value;
 		var addressOutput = document.createElement("div");
 		addressOutput.setAttribute("id", "emailOutput");
 		addressOutput.appendChild(document.createTextNode("Address: " + addressValue));
-		document.getElementById("output").appendChild(addressOutput);
 		
 		//City
 		var cityValue = document.getElementById("City").value;
 		var cityOutput = document.createElement("div");
 		cityOutput.setAttribute("id", "cityOutput");
 		cityOutput.appendChild(document.createTextNode("City: " + cityValue));
-		document.getElementById("output").appendChild(cityOutput);
 		
 		//State
 		var stateValue = document.getElementById("State").value;
 		var stateOutput = document.createElement("div");
 		stateOutput.setAttribute("id", "stateOutput");
 		stateOutput.appendChild(document.createTextNode("State: " + stateValue));
-		document.getElementById("output").appendChild(stateOutput);
-	
+		
 		//Zip code
 		var zipValue = document.getElementById("Zip").value;
 		var zipOutput = document.createElement("div");
 		zipOutput.setAttribute("id", "zipOutput");
 		zipOutput.appendChild(document.createTextNode("Zip Code: " + zipValue));
-		document.getElementById("output").appendChild(zipOutput);
 		
 		//Gender
 		if (document.getElementById("male").checked) {
@@ -235,27 +232,78 @@ function validate () {
 		}
 		var genderOutput = document.createElement("div");
 		genderOutput.appendChild(document.createTextNode("Gender: " + genderValue));
-		document.getElementById("output").appendChild(genderOutput);
 		
 		//Previous Courses
 		var phpValue = document.getElementById("php").checked;
+		if (phpValue == true) {
+			phpValue = "php/MySQL ";
+		} else {
+			phpValue = "";
+		}
 		var javaValue = document.getElementById("java").checked;
+		if (javaValue == true) {
+			javaValue = "Java ";
+		} else {
+			javaValue = "";
+		}
 		var railsValue = document.getElementById("rails").checked;
+		if (railsValue == true) {
+			railsValue = "Rails ";
+		} else {
+			railsValue = "";
+		}
 		coursesOutput = document.createElement("div");
-		coursesOutput.setAttribute("id", "coursesOutput");
+		coursesOutput.appendChild(document.createTextNode("Courses: " + phpValue + javaValue + railsValue));
 		
+		// If the output is not already there, show it.
+		if (!document.getElementById("output")) {
 		
-		document.getElementById("output").appendChild(coursesOutput);
+			// parent output div	
+			document.getElementById("form").appendChild(output);
+			// name output
+			document.getElementById("output").appendChild(nameOutput);
+			// email output
+			document.getElementById("output").appendChild(emailOutput);
+		
+			document.getElementById("output").appendChild(phoneOutput);
+		
+			document.getElementById("output").appendChild(addressOutput);
+		
+			document.getElementById("output").appendChild(cityOutput);
+		
+			document.getElementById("output").appendChild(stateOutput);
+	
+			document.getElementById("output").appendChild(zipOutput);
+		
+			document.getElementById("output").appendChild(genderOutput);
+		
+			document.getElementById("output").appendChild(coursesOutput);
 		
 		} else {
-		
-		}
-	} else {
-		
-		var removeOutput = document.getElementById("output");
-		if (removeOutput) {
+			var removeOutput = document.getElementById("output"); 
 			removeOutput.parentNode.removeChild(removeOutput);
+			
+			// parent output div	
+			document.getElementById("form").appendChild(output);
+			// name output
+			document.getElementById("output").appendChild(nameOutput);
+			// email output
+			document.getElementById("output").appendChild(emailOutput);
+		
+			document.getElementById("output").appendChild(phoneOutput);
+		
+			document.getElementById("output").appendChild(addressOutput);
+		
+			document.getElementById("output").appendChild(cityOutput);
+		
+			document.getElementById("output").appendChild(stateOutput);
+	
+			document.getElementById("output").appendChild(zipOutput);
+		
+			document.getElementById("output").appendChild(genderOutput);
+		
+			document.getElementById("output").appendChild(coursesOutput);
 		}
 	}
 
-} 
+}; 
