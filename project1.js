@@ -4,8 +4,8 @@ function init() {
 function validate () { 
 	
 	// Check whether the name input has a value.
-
-	if (document.getElementById("Name").value == "") {
+	var nameRegEx = /^[a-z]{2,}$/i;
+	if (nameRegEx.test(document.getElementById("Name").value) == false) {
 		
 		// Check whether the error message is already shown.
 		if (!document.getElementById("nameErrorField")) {
@@ -14,7 +14,7 @@ function validate () {
 			var nameErrorField = document.createElement("span");
 			nameErrorField.setAttribute("id", "nameErrorField");
 			nameErrorField.className = "errorField";
-			nameErrorField.appendChild(document.createTextNode("You must provide a name."));
+			nameErrorField.appendChild(document.createTextNode("You must provide a valid name."));
 			document.getElementById("inputNameContainer").appendChild(nameErrorField);	
 		}
 	
@@ -48,13 +48,14 @@ function validate () {
 	}
 	
 	// Phone Number validation
-	
-	if ((document.getElementById("Phone1").value == "") || (document.getElementById("Phone2").value == "") || (document.getElementById("Phone3").value == "")) {
+	var phoneRegEx1 = /^\d{3}$/;
+	var phoneRegEx2 = /^\d{4}$/;
+	if ((phoneRegEx1.test(document.getElementById("Phone1").value) == false) || (phoneRegEx1.test(document.getElementById("Phone2").value) == false) || (phoneRegEx2.test(document.getElementById("Phone3").value) == false)) {
 		if (!document.getElementById("phoneErrorField")) {
 			var phoneErrorField = document.createElement("span");
 			phoneErrorField.setAttribute("id", "phoneErrorField");
 			phoneErrorField.className = "errorField";
-			phoneErrorField.appendChild(document.createTextNode("You must provide a phone number."));
+			phoneErrorField.appendChild(document.createTextNode("You must provide a valid phone number."));
 			document.getElementById("inputPhoneContainer").appendChild(phoneErrorField);
 		}
 	} else {
@@ -117,12 +118,13 @@ function validate () {
 	
 	// Zip validation
 	
-	if (document.getElementById("Zip").value == "") {
+	var zipRegEx = /^\d{5}$/;
+	if (zipRegEx.test(document.getElementById("Zip").value) == false) {
 		if (!document.getElementById("zipErrorField")) {
 			var zipErrorField = document.createElement("span");
 			zipErrorField.setAttribute("id", "zipErrorField");
 			zipErrorField.className = "errorField";
-			zipErrorField.appendChild(document.createTextNode("You must provide a zip code."));
+			zipErrorField.appendChild(document.createTextNode("You must provide a valid zip code."));
 			document.getElementById("inputZipContainer").appendChild(zipErrorField);
 		}
 	} else {

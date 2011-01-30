@@ -12,9 +12,14 @@
 	form validation works as follows.</h2>
 	<ul>
 		<li>All changes happen when the validate button is clicked.</li>
-		<li>Any empty field will result in an inline error message.</li>
-		<li>If the invalid field is filled in the error message will disappear.</li>
-		<li>If the form is completely valid (all field filled) it will output the values that were inputed</li> 
+		<li>Any invalid field will result in an inline error message (See below).</li>
+			<ul>
+				<li>I added some Regular Expression validation.</li>
+				<li>Name entered must be at least 2 letters long with no spaces.</li>
+				<li>Phone number and zip code must be numbers and correct length.</li>
+			</ul>
+		<li>If the invalid field is filled in validly the error message will disappear.</li>
+		<li>If the form is completely valid the inputed values will show up below the form.</li> 
 	</ul>
 
 

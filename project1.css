@@ -11,7 +11,7 @@ h2 {
 	margin:5px 5px 20px 5px;
 }
 form {
-	width:600px;
+	width:655px;
 	margin:0 auto;
 }
 label {
@@ -38,10 +38,12 @@ label {
 #buttonContainer {
 }
 .errorField {
-	color:red;
-	border:solid thin;
+	padding:0px 3px;
+	color:white;
+	background:gray;
+	border:solid black 1px;
 	float:right;
-	width:225px;
+	width:275px;
 }
 .blue {
 	color: blue;
